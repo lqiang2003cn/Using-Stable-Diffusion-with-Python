@@ -77,7 +77,7 @@ def main():
     for param in unet.parameters():
         # only upcast trainable parameters (LoRA) into fp32
         if param.requires_grad:
-            param.data = param.to(torch.float32)
+            param.json_data = param.to(torch.float32)
     
     # Downloading and loading a dataset from the hub. data will be saved to ~/.cache/huggingface/datasets by default
     if dataset_name:
